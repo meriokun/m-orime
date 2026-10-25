@@ -1,0 +1,594 @@
+﻿@charset "utf-8";
+
+/* スマホ用CSS…画面サイズが最大767pxまで適用 */
+@media screen and (max-width:767px) {
+
+.sp{
+  display:block;
+}
+.pc{
+  display:none;
+}
+
+*{  
+/*   max-width: 767px; */
+  margin: auto;
+}
+	
+/* 全体ここから */
+	
+
+body{
+  max-width: 767px;
+  margin: auto;
+  -webkit-text-size-adjust: 100%;
+	background-color:#FFFFFF;
+}
+	
+
+/* 全体ここまで */
+
+/* ヘッダーここから */
+
+
+	
+#top img{
+   padding:13px 12px 0px 0px;
+   float:right;
+   width:30px;
+   position:relative;
+   bottom:40px;
+}
+
+
+/*ハンバーガーリストここから▼*/
+
+header {
+  padding:22px 0px 3px 10px;
+  background: #ffffff;
+  font-family:'Century Gothic','Avenir-Light', sans-serif;
+  letter-spacing:0.05em;
+}
+
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute; 
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #8f8d8d;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  padding:22px 0 0 5px;
+  z-index: 9999;/*最前面に*/
+  width: 50%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 200px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+#nav-content ul li{
+  line-height:1.8em;
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+
+/* ▼サブメニューは、とりあえず非表示にしておく */
+
+ul.ddmenu_sp li a{
+  color:#8f8d8d;
+}
+
+ul.ddmenu_sp_2 li a{
+  color:#8f8d8d;
+}
+
+ul.ddmenu_sp li lu li a{
+  color:#8f8d8d;
+}
+
+ul.ddmenu_sp a:hover {
+  background-color: #ffffff; /* メニュー項目にマウスが載ったときの背景色(白) */
+  color: #b6b6b6;            /* メニュー項目にマウスが載ったときの文字色(明るい灰色) */
+}
+
+ul.ddmenu_sp_2 a:hover {
+  background-color: #ffffff; /* メニュー項目にマウスが載ったときの背景色(白) */
+  color: #b6b6b6;            /* メニュー項目にマウスが載ったときの文字色(明るい灰色) */
+}
+
+ul.ddmenu_sp ul {
+  display: none;         /* ★5:非表示にする */
+}
+
+
+/* -------------------- */
+/* ▼サブメニューの装飾 */
+/* -------------------- */
+
+ul.ddmenu_inner {
+   display: none;       /* ★1:標準では非表示にする */
+   margin: 0px;         /* ★2:サブメニュー外側の余白(ゼロ) */
+   padding: 0px;        /* ★3:サブメニュー内側の余白(ゼロ) */
+   position: absolute;  /* ★4:絶対配置にする */
+}
+
+
+
+/* ---------------------------------- */
+/* ▼サブメニューがある場合に開く処理 */   /* ※サブメニューが1階層しか存在しない場合の記述 */
+/* ---------------------------------- */
+
+li.ddmenu_works:hover ul{
+   display: block;      /* ★5:マウスポインタが載っている項目の内部にあるリストを表示する */
+}
+
+li.ddmenu_works:hover + .ddmenu_sp_3 {
+   position:relative;
+   top:147px;
+}
+	
+
+/*ハンバーガーリストここまで▲*/
+	
+	
+/* ヘッダーここまで */
+
+
+
+
+/* mainここから */
+
+
+.main{
+  max-width: 767px;
+  width:100%;
+  text-align:center;
+  margin:100px 0px 30px 0px;
+}
+
+.main p{
+  text-align:center;
+  color: #8f8d8d;  
+  padding:40px;
+  font-size:14px;
+  letter-spacing:0.05em;
+}
+
+.main img{
+  width:80%;
+}
+
+/* mainここまで */
+
+
+
+/* worksここから */
+
+
+
+
+
+
+
+
+
+
+
+
+.works{
+  max-width:409px;
+}
+
+
+.item{
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  padding-bottom:1px;
+}
+
+.item img{
+  width:100%;
+}
+
+.item2{
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  padding-bottom:1px;
+}
+
+.item2 img{
+  width:100%;
+}
+
+
+	/* マウスオーバーここから */
+	.item {
+	  position: relative;
+	}
+	.item .active {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	  transition: 0.5s; // ゆっくり
+	}
+	.item:hover .active {
+	  opacity: 1;
+	}
+
+	.item2 {
+	  position: relative;
+	}
+	.item2 .active {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	  transition: 0.5s; // ゆっくり
+	}
+	.item2:hover .active {
+	  opacity: 1;
+	}
+
+
+
+/* worksここまで */
+
+
+/* footerここから */
+
+#totop{
+  text-align:right;
+}
+
+
+#nav_footer p{
+   clear: both;
+   text-align:center;
+   font-family:'Century Gothic','Avenir-Light', sans-serif;
+   font-size:13px;
+   color: #8f8d8d;  
+   padding:20px;
+   letter-spacing:0.05em;
+}
+
+
+#nav_footer p a{
+  color: #8f8d8d;  
+
+}
+
+#nav_footer a:hover{
+  filter:alpha(opacity=80);
+  opacity:0.7;
+}
+
+/* footerここまで */
+
+
+
+/* コーポレートサイトここから */
+
+.page_inner{
+  width:93%;
+  color: #8f8d8d; 
+  margin-top:100px;
+}
+
+.page_inner h1{
+   font-size:22px;
+   margin:  0;             /* デフォルトCSS打ち消し */
+   border-bottom:  solid;  /* 線指定 */
+   padding-bottom:  5px;   /* 余白指定 */
+   margin-bottom: 0px;    /* 周りの余白指定 */
+}
+
+.page_inner h2{
+   font-size:19px;
+}
+
+.site{
+  padding:70px 0px 80px 0px;
+}
+
+.discription{
+  font-size:14px;
+  padding:50px 0px 50px 0px;
+}
+
+.page_inner_img{
+  width:100%;
+}
+
+.inner_sp, .sp_title{
+  max-width:435px;
+}
+
+
+
+
+
+/* コーポレートサイトここまで */
+
+
+/*ショップサイトここから */
+
+#misshkissh_image2{
+  padding-top:5px;
+}
+
+
+.shop_images h3 {
+  padding:20px 0px 10px 0px;
+}
+
+.ban_work,.ban_work_2,.ban_work_3,.ban_work_4{
+ border:1px solid;
+ border-color: #666666;
+ padding:10px;
+ margin-top:10px;
+ margin-bottom:20px;
+}
+
+.ban_work{
+ height:auto;
+ padding:20px 0px 20px 0px;
+}
+
+.ban_work_2{
+ height:auto;
+ padding:20px 0px 20px 0px;
+}
+
+.ban_work_3{
+ height:auto;
+ padding:20px 0px 20px 0px;
+}
+
+.ban_work_4{
+ height:auto;
+ width:100%;
+ padding:20px 0px 20px 0px;
+}
+
+.ban_image_sp{
+ width:100%;
+ padding:20px 0 20px 0;
+}
+
+.ban_image_left{
+  padding:0px 10px 0px 0px;
+}
+
+.site_title_ba{
+ margin:50px 0px 20px 0px;
+}
+
+.site_title_bann{
+ padding:0px 20px 10px 20px;
+ border-bottom: solid 1px #dcdcdc;
+}
+
+.discription_right{
+ padding:20px 10px 0px 10px;
+}
+
+
+.ban_img_img{
+ width:100%;
+}
+
+.site_title_bann2{
+ width:100%;
+ margin:10px 22px 10px 10px;
+ border-bottom: solid 1px #dcdcdc;
+}
+
+
+.ban_image_sp_1,.ban_image_sp_2,.ban_image_sp_3,.ban_image_sp_4{
+ padding:20px 0 20px 0;
+ width:90%;
+}
+
+.ban_image_sp_3{
+ width:70%;
+}
+
+
+
+/*ショップサイトここまで */
+
+
+
+/*アクティビティーここから */
+
+.activities_01{
+  margin-top:60px;
+}
+
+.activities_01 p{
+  width:100%;
+  padding:60px 0px 70px 0px;
+}
+
+.activities_01,.activities_02,.activities_03 img{
+  width:100%;
+}
+
+.act_image_12{
+ max-width:325px;
+}
+
+.activities_03{
+ padding-bottom:50px;
+}
+
+/*アクティビティーここまで */
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* アニメーションテキストここから */
+
+
+
+    .text {
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+/* アニメーションテキストここまで */
+
+
+/* アニメーション画像ここから */
+	.item{
+	  color:#fff;
+	  opacity: 0;
+	}
+
+	.item2{
+	  color:#fff;
+	  opacity: 0;
+	}
+
+
+
+	.item{
+	  opacity: 1 impotrant!; 
+	}
+
+
+	.item:nth-child(1) {
+	  -webkit-animation: example 0.5s ease 1s 1 forwards;
+	  -ms-animation: example 0.5s ease 1s 1 forwards;
+	  animation: example 0.5s ease 1s 1 forwards;
+	}
+	.item:nth-child(2) {
+	  -webkit-animation: example 0.5s ease 1.5s 1 forwards;
+	  animation: example 0.5s ease 1.5s 1 forwards;
+	}
+	.item:nth-child(3) {
+	  -webkit-animation: example 0.5s ease 2s 1 forwards;
+	  animation: example 0.5s ease 2s 1 forwards;
+	}
+
+	.item2:nth-child(1) {
+	  -webkit-animation: example 0.5s ease 2.5s 1 forwards;
+	  -ms-animation: example 0.5s ease 2.5s 1 forwards;
+	  animation: example 0.5s ease 2.5s 1 forwards;
+	}
+	.item2:nth-child(2) {
+	  -webkit-animation: example 0.5s ease 3s 1 forwards;
+	  -ms-animation: example 0.5s ease 3s 1 forwards;
+	  animation: example 0.5s ease 3s 1 forwards;
+	}
+	.item2:nth-child(3) {
+	  -webkit-animation: example 0.5s ease 3.5s 1 forwards;
+	  -ms-animation: example 0.5s ease 3.5s 1 forwards;
+	  animation: example 0.5s ease 3.5s 1 forwards;
+	}
+
+
+	@-webkit-keyframes example {
+	  100% {
+	    opacity: 1;
+	  }
+	}
+	@keyframes example {
+	  100% {
+	    opacity: 1;
+	  }
+	}
+
+	@-ms-keyframes example {
+	  100% {
+	    opacity: 1;
+	  }
+
+/* アニメーション画像ここまで */

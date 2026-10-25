@@ -1,0 +1,509 @@
+﻿@charset "utf-8";
+
+/* PC用CSS…画面サイズが最小768pxまで適用 */
+@media screen and (min-width:768px) {
+
+.sp{
+  display:none;
+}
+.pc{
+  display:block;
+}
+
+*{  
+  margin: auto;
+}
+
+/* 全体ここから */
+
+body{
+	/* max-width: 1250px; */
+        max-width:1250px;
+	margin: auto;
+	background-color:#FFFFFF;
+	color:#8f8d8d;
+}
+	
+
+/* 全体ここまで */
+
+/* ヘッダーここから */
+
+#top a:hover{
+  filter:alpha(opacity=80);
+  opacity:0.7;
+}
+
+#top{
+  padding:22px;
+}
+	
+#top img{
+   float:left;
+}
+
+
+/* -------------------- */
+/* ▼メニューバーの装飾 */
+/* -------------------- */
+ul.ddmenu {
+   margin: 0px;               /* メニューバー外側の余白(ゼロ) */
+   padding: 0px 0px 0px 15px; /* メニューバー内側の余白(左に15px) */
+   background-color: #ffffff; /* バーの背景色(白) */
+   text-align: right;
+   font-family:'Century Gothic','Avenir-Light', sans-serif;
+   font-size:15px;
+   letter-spacing:0.05em;
+}
+
+/* -------------------------- */
+/* ▼メインメニュー項目の装飾 */
+/* -------------------------- */
+
+ul.ddmenu li {
+   width: 142px;           /* メニュー項目の横幅(135px) */
+   display: inline-block;  /* ★1:横並びに配置する */
+   list-style-type: none;  /* ★2:リストの先頭記号を消す */
+   position: relative;     /* ★3:サブメニュー表示の基準位置にする */
+}
+ul.ddmenu a {
+   background-color: #ffffff; /* メニュー項目の背景色(白) */
+   color: #8f8d8d;              /* メニュー項目の文字色(灰色) */
+   line-height: 33px;         /* メニュー項目のリンクの高さ(33px) */
+   text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
+   text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
+   display: block;            /* ★4:項目内全域をリンク可能にする */
+}
+ul.ddmenu a:hover {
+   background-color: #ffffff; /* メニュー項目にマウスが載ったときの背景色(白) */
+   color: #b6b6b6;            /* メニュー項目にマウスが載ったときの文字色(明るい灰色) */
+}
+
+/* ▼サブメニューは、とりあえず非表示にしておく */
+ul.ddmenu ul {
+   display: none;         /* ★5:非表示にする */
+}
+
+/* -------------------- */
+/* ▼サブメニューの装飾 */
+/* -------------------- */
+ul.ddmenu ul {
+   display: none;       /* ★1:標準では非表示にする */
+   margin: 0px;         /* ★2:サブメニュー外側の余白(ゼロ) */
+   padding: 0px;        /* ★3:サブメニュー内側の余白(ゼロ) */
+   position: absolute;  /* ★4:絶対配置にする */
+}
+
+
+
+/* ---------------------------------- */
+/* ▼サブメニューがある場合に開く処理 */   /* ※サブメニューが1階層しか存在しない場合の記述 */
+/* ---------------------------------- */
+
+ul.ddmenu li:hover ul {
+   display: block;      /* ★5:マウスポインタが載っている項目の内部にあるリストを表示する */
+}
+
+
+	
+	
+/* ヘッダーここまで */
+
+
+
+
+/* mainここから */
+
+
+.main{
+  text-align:center;
+  margin:150px 0px 90px 0px;
+}
+
+.main p{
+  text-align:center;
+  color: #8f8d8d;  
+  padding:40px;
+  font-size:18px;
+  letter-spacing:0.05em;
+}
+
+
+
+/* mainここまで */
+
+
+
+/* worksここから */
+
+.works{
+  max-width:1227px;
+}
+
+
+.item{
+  float: left;
+  width: 33.333333%;
+  list-style: none;
+  text-align: center;
+}
+
+.item img{
+  float: left;
+  width:100%;
+}
+
+.item2{
+  float: left;
+  width: 33.333333%;
+  list-style: none;
+  text-align: center;
+
+}
+
+.item2 img{
+  float: left;
+  width:100%;
+}
+
+
+	/* マウスオーバーここから */
+	.item {
+	  position: relative;
+	}
+	.item .active {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	  transition: 0.5s; // ゆっくり
+	}
+	.item:hover .active {
+	  opacity: 1;
+	}
+
+	.item2 {
+	  position: relative;
+	}
+	.item2 .active {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	  transition: 0.5s; // ゆっくり
+	}
+	.item2:hover .active {
+	  opacity: 1;
+	}
+
+
+/* worksここまで */
+
+
+/* footerここから */
+
+footer{
+   padding-bottom:60px;
+}
+
+
+#nav_footer p{
+   clear: both;
+   text-align:center;
+   font-family:'Century Gothic','Avenir-Light', sans-serif;
+   font-size:15px;
+   color:#8f8d8d;
+   padding-top:40px;
+   letter-spacing:0.05em;
+}
+
+
+#nav_footer p a{
+   color:#8f8d8d;
+
+}
+
+#nav_footer a:hover{
+  filter:alpha(opacity=80);
+  opacity:0.7;
+}
+
+/* footerここまで */
+
+
+
+/* コーポレートサイトここから */
+
+
+
+.page_inner{
+  width:900px;
+  color: #8f8d8d; 
+  margin-top:100px;
+}
+
+.page_inner h1{
+   margin:  0;             /* デフォルトCSS打ち消し */
+   border-bottom:  solid;  /* 線指定 */
+   padding-bottom:  5px;   /* 余白指定 */
+    margin-bottom: 15px;    /* 周りの余白指定 */
+}
+
+.site{
+  padding:100px 0px 50px 0px;
+}
+
+.discription{
+  padding:50px 0px 50px 0px;
+}
+
+.page_inner_img{
+  width:100%;
+}
+
+.inner_sp, .sp_title{
+  max-width:435px;
+}
+
+
+/* コーポレートサイトここから */
+
+
+/*ショップサイトここから */
+
+#misshkissh_image2{
+  padding-top:5px;
+}
+
+
+.shop_images h3 {
+  padding:20px 0px 10px 0px;
+}
+
+
+
+ h3 {
+  padding:20px 0px 10px 0px;
+}
+
+
+.ban_work,.ban_work_2,.ban_work_3,.ban_work_4{
+ clear:both;
+ border:1px solid;
+ border-color: #666666;
+ padding:10px;
+ margin-top:10px;
+ margin-bottom:20px;
+}
+
+.ban_work{
+ height:420px;
+}
+
+.ban_work_2{
+ height:620px;
+}
+
+.ban_work_3{
+ height:720px;
+}
+
+.ban_work_4{
+ height:800px;
+ padding:20px 0px 20px 0px;
+}
+
+.ban_image_left{
+  float:left;
+  padding:0px 30px 0px 10px;
+}
+
+.site_title_ba{
+ margin:50px 0px 20px 0px;
+}
+
+.site_title_bann{
+ padding:10px 0px 10px 0px;
+ border-bottom: solid 1px #dcdcdc;
+}
+
+.discription_right{
+ padding:20px 10px 0px 20px;
+}
+
+.ban_img_img{
+ width:400px;
+ float:left;
+ padding:20px 5px 0px 20px;
+}
+
+.site_title_bann2{
+ width:400px;
+ float:left;
+ margin:10px 22px 10px 10px;
+ border-bottom: solid 1px #dcdcdc;
+}
+
+/*ショップサイトここまで */
+
+
+
+/*アクティビティーここから */
+
+.activities_01{
+  display: block;
+  float:left;
+  margin-top:60px;
+}
+
+.activities_01 p{
+  float:left;
+  width:60%;
+  padding:70px 60px 20px 0px;
+}
+
+
+
+.activities_01 img{
+  padding:50px 0px 20px 10px;
+  margin-left:160px;
+}
+
+.activities_02 img{
+  float:left; 
+}
+
+.activities_03 img{
+  float:left;
+  padding:0px 0px 100px 12px; 
+}
+
+.activities_01:after {
+  content: "";
+  display: block;
+  clear: both;	
+}
+
+
+/*アクティビティーここまで */
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* アニメーションテキストここから */
+
+    .site_title{
+        animation-name: fadein;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    .discription{
+        animation-name: fadein;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    } 
+
+    .text{
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+/* アニメーションテキストここまで */
+
+
+/* アニメーション画像ここから */
+	.item,.page_inner_img{
+	  color:#fff;
+	  opacity: 0;
+	}
+
+	.item2{
+	  color:#fff;
+	  opacity: 0;
+	}
+
+	.item,.page_inner_img{
+	  opacity: 1 impotrant!; 
+	}
+
+ 	.item2{
+	  opacity: 1 impotrant!; 
+	}
+
+        .page_inner_img{
+	  -webkit-animation: example 0.2s ease 0.7s 1 forwards;
+	  -ms-animation: example 0.2s ease 0.7s 1 forwards;
+	  animation: example 0.2s ease 0.7s 1 forwards;
+	}
+
+	.item:nth-child(1){
+	  -webkit-animation: example 0.5s ease 1s 1 forwards;
+	  -ms-animation: example 0.5s ease 1s 1 forwards;
+	  animation: example 0.5s ease 1s 1 forwards;
+	}
+	.item:nth-child(2){
+	  -webkit-animation: example 0.5s ease 1.5s 1 forwards;
+	  animation: example 0.5s ease 1.5s 1 forwards;
+	}
+	.item:nth-child(3){
+	  -webkit-animation: example 0.5s ease 2s 1 forwards;
+	  animation: example 0.5s ease 2s 1 forwards;
+	}
+
+	.item2:nth-child(1){
+	  -webkit-animation: example 0.5s ease 2.5s 1 forwards;
+	  -ms-animation: example 0.5s ease 2.5s 1 forwards;
+	  animation: example 0.5s ease 2.5s 1 forwards;
+	}
+	.item2:nth-child(2) {
+	  -webkit-animation: example 0.5s ease 3s 1 forwards;
+	  -ms-animation: example 0.5s ease 3s 1 forwards;
+	  animation: example 0.5s ease 3s 1 forwards;
+	}
+	.item2:nth-child(3) {
+	  -webkit-animation: example 0.5s ease 3.5s 1 forwards;
+	  -ms-animation: example 0.5s ease 3.5s 1 forwards;
+	  animation: example 0.5s ease 3.5s 1 forwards;
+	}
+
+
+	@-webkit-keyframes example {
+	  100% {
+	    opacity: 1;
+	  }
+	}
+	@keyframes example {
+	  100% {
+	    opacity: 1;
+	  }
+	}
+
+	@-ms-keyframes example {
+	  100% {
+	    opacity: 1;
+	  }
+
+/* アニメーション画像ここまで */
